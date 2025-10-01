@@ -3,6 +3,11 @@ const app = express();
 const users = require('./routes/user.js');
 const posts = require('./routes/post.js');
 
+app.get('/getcookies', (req, res) => {  // Route to set cookies in the browser
+    res.cookie('name', 'express');
+    res.send('sent you some cookies');
+});
+
 app.get('/', (req, res) => {
     res.send('Server is listening on port 3000');
 });
